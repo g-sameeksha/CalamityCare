@@ -1,0 +1,173 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    
+    font-family: "Poppins",sans-serif;
+}
+
+.Navbar {
+    position: fixed;
+    width: 100%;
+    height: 3.5rem;
+   
+    display: flex;
+    justify-content: space-between;
+    gap : 1rem;
+    background-color : rgb(40, 58, 139);
+    padding: 0.5rem 0;
+    top :0;
+    z-index : 100;
+     
+}
+
+.heading1{
+    text-align: center;
+     margin : 20px;  
+     color : white; 
+}
+
+a {
+    text-decoration: none;
+    color : white;
+}
+
+.contents {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.color img{
+    height: 30px;
+}
+
+#name {
+    color: white;
+}
+
+
+
+h1
+{
+    text-align: center;
+    width:100%;
+   text-shadow: 2px 2px 10px #05014a;
+    color:white;
+   
+}
+
+
+.content{
+     display: flex;
+     flex-direction: column;
+     gap:30px;
+     width:1080px;
+     margin: auto 60px;
+     background-color:#05014a ;
+     padding: 20px;
+     color:white;
+     border-radius: 30px;
+
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+
+
+form {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+form textarea {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    background-color: transparent;
+    color : white;
+}
+
+form button {
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #ff5722;
+}
+
+#feedback{
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+   /* display: flex ;
+   flex-direction: column;
+   justify-content: center;
+   align-items: right;
+   color: white; */
+}
+
+
+#feedback-counter {
+    margin: 20px;
+    font-size: 16px;
+}
+#feedback-form{
+    position:relative;
+    left : 20px;
+    width : 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#feedback-form button{
+    width: 200px;
+
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+   
+}
+
+
+button {
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}

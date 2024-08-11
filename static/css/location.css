@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    background-image: url('https://www.imb.org/wp-content/uploads/2020/03/map_default-1536x1024.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Poppins",sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    width: 80vw;  
+    padding: 20px;
+}
+.box:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Maximum width for the box */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 200px; /* Set the desired width */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#demo {
+    font-size: 16px;
+    text-align: center;
+}

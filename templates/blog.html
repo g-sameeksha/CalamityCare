@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalamityCare</title>
+    
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/blogstyles.css') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/styles.css') }}"
+  />
+</head>
+<body>
+    <div class="wrapper"  >
+        <div class="Navbar">
+              <div><h1 title="NameofWebiste" id="name">CalamityCare</h1></div>
+              <div class="contents">
+                <a href="{{ url_for('home') }}" class="color"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=FFFFFF" title="Home" ></a>
+                <a href="{{ url_for('weatherblog')}}" class="color"><img src="https://img.icons8.com/?size=100&id=qWg3Sn87LjDZ&format=png&color=FFFFFF" title="Weather Blog"></a>
+                <a href="{{ url_for('learning')}}" class="color"><img src="https://img.icons8.com/?size=100&id=25211&format=png&color=FFFFFF"  title="Learning"></a>
+                <a href="{{ url_for('service')}}" class="color"><img src="https://img.icons8.com/?size=100&id=2908&format=png&color=FFFFFF"  title="Services"></a>
+                <a href="{{ url_for('About')}}" class="color"><img src="https://img.icons8.com/?size=100&id=7694&format=png&color=FFFFFF"  title="About US"></a>
+              </div>
+        </div>
+ 
+
+    <main>
+        <div class="container" id="home">
+            <section class="intro">
+                <h2>Welcome to Our Disaster Preparedness Hub</h2>
+                <p>Stay informed and prepared for natural disasters with the latest resources and tips. 🌍</p>
+            </section>
+
+            <section class="blog-list" id="blogs">
+                <h2>Latest Blogs 📝</h2>
+                <ul id="blogs-list">
+                    <!-- Blog items will be injected here by JavaScript -->
+                </ul>
+            </section>
+
+            <section class="tips" id="tips">
+                <h2>Preparedness Tips 🔍</h2>
+                <ul>
+                    <li>Have an emergency kit ready with essentials like food, water, and first aid supplies.</li>
+                    <li>Develop a family emergency plan and practice it regularly.</li>
+                    <li>Stay informed about the risks and signs of natural disasters in your area.</li>
+                </ul>
+            </section>
+
+            <section class="contact" id="contact">
+                <h2>Contact Us 📧</h2>
+                <p>For more information, reach out to us at <a href="mailto:info@disasterprep.com">info@disasterprep.com</a>.</p>
+            </section>
+        </div>
+    </main>
+   
+    <section id="feedback" class="scroll-section">
+        <h2>💬 Feedback and Suggestions</h2>
+        <p>We value your input. Please share your ideas on disaster management and additional services:</p>
+        <form id="feedback-form">
+            <label for="disaster-ideas">Ideas on Disaster Management:</label>
+            <textarea id="disaster-ideas" name="disaster-ideas" rows="4" placeholder="Share your ideas on controlling and managing disasters..."></textarea>
+            <label for="additional-services">Additional Services:</label>
+            <textarea id="additional-services" name="additional-services" rows="4" placeholder="Suggest additional services that could be included..."></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="feedback-counter">
+            <p>Total Feedback Submitted: <span id="feedback-count">0</span></p>
+        </div>
+    </section>
+  
+      <footer>
+  
+        <p>&copy; 2024 CalamityCare</p>
+    </footer>
+   
+
+    <script > 
+        document.addEventListener('DOMContentLoaded', function() {
+    const blogs = [
+        {
+            id: 1,
+            title: "Understanding Emergency Preparedness",
+            url: "https://www.ready.gov/prepare",
+            description: "Comprehensive guide on how to prepare for emergencies and natural disasters."
+        },
+        {
+            id: 2,
+            title: "Top 10 Emergency Kits for Families",
+            url: "https://www.cdc.gov/disasters/preparekit.html",
+            description: "Essential items for building a family emergency kit to handle various disasters."
+        },
+        {
+            id: 3,
+            title: "How to Create a Disaster Plan",
+            url: "https://www.fema.gov/emergency-managers/risk-management/plan",
+            description: "Step-by-step instructions on creating a robust disaster plan for your family."
+        },
+        {
+            id: 4,
+            title: "The Role of Community in Disaster Response",
+            url: "https://www.redcross.org/get-help/how-to-prepare-for-emergencies.html",
+            description: "Explains how community involvement can enhance disaster response efforts."
+        },
+        {
+            id: 5,
+            title: "Emergency Response Team Operations",
+            url: "https://www.fema.gov/emergency-managers/incident-management",
+            description: "Insights into how emergency response teams operate and their roles during disasters."
+        },
+        {
+            id: 6,
+            title: "First Aid Basics for Disasters",
+            url: "https://www.redcross.org/take-a-class/first-aid",
+            description: "Fundamentals of first aid and its importance in emergency situations."
+        },
+        {
+            id: 7,
+            title: "Understanding Natural Disasters",
+            url: "https://www.ncdc.noaa.gov/sotc/national/202106",
+            description: "Detailed information on different types of natural disasters and their impacts."
+        },
+        {
+            id: 8,
+            title: "Building Resilience Against Disasters",
+            url: "https://www.nibib.nih.gov/news-events/newsroom/resilient-communities",
+            description: "Strategies for building personal and community resilience to withstand disasters."
+        },
+        {
+            id: 9,
+            title: "Flood Preparedness and Safety Tips",
+            url: "https://www.floodsmart.gov/",
+            description: "Tips and strategies for preparing for and staying safe during floods."
+        },
+        {
+            id: 10,
+            title: "How to Prepare for Hurricanes",
+            url: "https://www.weather.gov/safety/hurricane",
+            description: "Guidance on preparing for hurricanes, including evacuation and safety measures."
+        },
+        {
+            id: 11,
+            title: "Wildfire Preparedness and Response",
+            url: "https://www.nifc.gov/fireInfo/fireInfo_main.html",
+            description: "Information on preparing for and responding to wildfires."
+        },
+        {
+            id: 12,
+            title: "Earthquake Safety Tips",
+            url: "https://earthquake.usgs.gov/learn/kids",
+            description: "Safety tips and educational resources for understanding and preparing for earthquakes."
+        }
+    ];
+
+    const blogsList = document.getElementById('blogs-list');
+    blogsList.innerHTML = blogs.map(blog => `
+        <li>
+            <a href="${blog.url}" target="_blank">${blog.title}</a>
+            <p>${blog.description}</p>
+        </li>
+    `).join('');
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalamityCare</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/service.css') }}"
+  />
+</head>
+<body>
+    <div class="wrapper"  >
+        <div class="Navbar">
+              <div><h1 title="NameofWebiste" id="name">CalamityCare</h1></div>
+              <div class="contents">
+                <a href="{{ url_for('home') }}" class="color"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=FFFFFF" title="Home" ></a>
+                <a href="{{ url_for('weatherblog')}}" class="color"><img src="https://img.icons8.com/?size=100&id=qWg3Sn87LjDZ&format=png&color=FFFFFF" title="Weather Blog"></a>
+                <a href="{{ url_for('learning')}}" class="color"><img src="https://img.icons8.com/?size=100&id=25211&format=png&color=FFFFFF"  title="Learning"></a>
+                <a href="{{ url_for('service')}}" class="color"><img src="https://img.icons8.com/?size=100&id=2908&format=png&color=FFFFFF"  title="Services"></a>
+                <a href="{{ url_for('About')}}" class="color"><img src="https://img.icons8.com/?size=100&id=7694&format=png&color=FFFFFF"  title="About US"></a>
+              </div>
+        </div>
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="#government-services">🏛 Government Services</a></li>
+                <li><a href="#non-government-services">🤝 Non-Government Services</a></li>
+                <li><a href="#precautions">⚠ Precautions</a></li>
+                <li><a href="#alerts">📢 Real-Time Alerts</a></li>
+                <li><a href="#localized-content">🌍 Localized Content</a></li>
+                <li><a href="#offline-access">📶 Offline Access</a></li>
+                <li><a href="#feedback">💬 Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="government-services" class="scroll-section">
+            <h2>🏛 Government Services</h2>
+            <p>Access various government resources:</p>
+            <ul>
+                <li>Emergency shelters and evacuation routes provided by <a href="https://www.ready.gov" target="_blank">Ready.gov</a>.</li>
+                <li>Real-time disaster updates from <a href="https://www.fema.gov" target="_blank">FEMA</a>.</li>
+                <li>Health advisories and emergency response plans by the <a href="https://www.cdc.gov" target="_blank">CDC</a>.</li>
+            </ul>
+        </section>
+
+        <section id="non-government-services" class="scroll-section">
+            <h2>🤝 Non-Government Services</h2>
+            <p>Explore services provided by NGOs:</p>
+            <ul>
+                <li>Disaster relief efforts by the <a href="https://www.redcross.org" target="_blank">Red Cross</a>.</li>
+                <li>Volunteer opportunities and resources from <a href="https://www.savethechildren.org" target="_blank">Save the Children</a>.</li>
+                <li>Community support and crisis management by <a href="https://www.worldvision.org" target="_blank">World Vision</a>.</li>
+            </ul>
+        </section>
+
+        <section id="precautions" class="scroll-section">
+            <h2>⚠ Precautions to Take</h2>
+            <p>Ensure your family is prepared with the following:</p>
+            <ul>
+                <li>Emergency kits including food, water, and medical supplies.</li>
+                <li>A communication plan for all family members.</li>
+                <li>Knowledge of local evacuation routes and shelters.</li>
+            </ul>
+            <h3>Watch these videos to learn more:</h3>
+            <div class="videos">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Mkb00OtJgkM" title="Disaster Preparedness and Response" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FVwvbS-0q18" title="Understanding Natural Disasters and Precautions" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="alerts" class="scroll-section">
+            <h2>📢 Real-Time Alerts and Notifications</h2>
+            <p>Stay informed with real-time alerts by subscribing to:</p>
+            <ul>
+                <li>Weather updates from <a href="https://www.weather.com" target="_blank">Weather.com</a>.</li>
+                <li>Local emergency notifications via <a href="https://www.nixle.com" target="_blank">Nixle</a>.</li>
+                <li>Government alerts from the <a href="https://www.ready.gov/alerts" target="_blank">National Emergency Alert System</a>.</li>
+            </ul>
+        </section>
+
+        <section id="localized-content" class="scroll-section">
+            <h2>🌍 Localized Content</h2>
+            <p>Get location-specific information:</p>
+            <ul>
+                <li>Localized weather updates specific to your area. You can use apps like <a href="https://www.accuweather.com" target="_blank">AccuWeather</a> to get updates.</li>
+                <li>Customized evacuation routes and shelter availability based on your location.</li>
+                <li>Local advisories for health and safety during disasters.</li>
+                <li>Information on community resources such as local volunteer groups, nearby medical facilities, and support centers.</li>
+            </ul>
+        </section>
+
+        <section id="offline-access" class="scroll-section">
+            <h2>📶 Offline Access</h2>
+            <p>Download critical information to access offline:</p>
+            <ul>
+                <li>Emergency contacts:</li>
+                <ul>
+                    <li>Government: <strong>911</strong></li>
+                    <li>Red Cross: <strong>1-800-RED-CROSS</strong></li>
+                    <li>FEMA: <strong>1-800-621-FEMA</strong></li>
+                </ul>
+            </ul>
+        </section>
+
+ 
+    <button id="back-to-top">↑ Top</button>
+    <section id="feedback" class="scroll-section">
+        <a href="{{ url_for('About')}}">About Us</a>
+        <h2>💬 Feedback and Suggestions</h2>
+        <p>We value your input. Please share your ideas on disaster management and additional services:</p>
+        <form id="feedback-form">
+            <label for="disaster-ideas">Ideas on Disaster Management:</label>
+            <textarea id="disaster-ideas" name="disaster-ideas" rows="4" placeholder="Share your ideas on controlling and managing disasters..."></textarea>
+            <label for="additional-services">Additional Services:</label>
+            <textarea id="additional-services" name="additional-services" rows="4" placeholder="Suggest additional services that could be included..."></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="feedback-counter">
+            <p>Total Feedback Submitted: <span id="feedback-count">0</span></p>
+        </div>
+    </section>
+      <footer>
+        <p>&copy; 2024 CalamityCare</p>
+    </footer>
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    const backToTopButton = document.getElementById('back-to-top');
+    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackCount = document.getElementById('feedback-count');
+    let feedbackSubmitted = 0;
+
+    // Smooth scrolling for navigation links
+    navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Back-to-top button functionality
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Handle form submission with validation
+    feedbackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const disasterIdeas = document.getElementById('disaster-ideas').value.trim();
+        const additionalServices = document.getElementById('additional-services').value.trim();
+
+        if (disasterIdeas && additionalServices) {
+            feedbackSubmitted++;
+            feedbackCount.textContent = feedbackSubmitted;
+            alert('Thank you for your feedback!');
+            feedbackForm.reset();
+        } else {
+            alert('Please fill out both fields before submitting.');
+        }
+    });
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.createElement('button');
+    darkModeToggle.textContent = 'Toggle Dark Mode';
+    darkModeToggle.style.position = 'fixed';
+    darkModeToggle.style.bottom = '60px';
+    darkModeToggle.style.right = '20px';
+    darkModeToggle.style.padding = '10px';
+    darkModeToggle.style.backgroundColor = '#444';
+    darkModeToggle.style.color = '#fff';
+    darkModeToggle.style.border = 'none';
+    darkModeToggle.style.borderRadius = '5px';
+    document.body.appendChild(darkModeToggle);
+
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <!-- <div class="text">
+        Hello Welcome !!!!! In this Website you get-<span class="role"></span>
+    </div>
+     -->
+
+     <div class="hero-section">
+        
+        <div class="hero-section-left">
+            <div class="hero-section-heading">Hello WELCOME!!!!!!  {{ session['username'] }}</div>
+            <div class="hero-section-sub-heading">
+                Here You Get - <span class="role"></span>
+            </div>
+            <div class="hero-section-description">
+                Natural disasters include all types of severe weather, which have the potential to pose a significant threat to human health and safety, property, critical infrastructure, and homeland security.
+            </div>
+            <div class="ls">
+                <button class="login"><a class ="accountsbutton" href="{{ url_for('logout') }}">Log out</a></button>
+            </div>
+        </div>
+        <div class="hero-section-right">
+          
+           <div class="user-image">
+            <img src="https://i.pinimg.com/736x/8b/4b/fd/8b4bfd1c2c48b6095cecd6f0c4974f2f.jpg" alt="" width="340px" height="300px"/>
+           </div>
+
+        </div>
+
+    </div>
+  
+
+    <div class ="user-weather-box">
+        <p id ="demo"></p>
+    </div>
+
+
+
+<script>
+     
+        const x = document.getElementById("demo");
+
+        document.addEventListener('DOMContentLoaded', function() {
+         
+            if (navigator.geolocation) {
+                localStorage.setItem('confirmationShown', 'true');
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+           
+        }
+      
+        );
+
+        function showPosition(position) {
+            // x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+            let lat = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            let api_key = "ed78443cb1b39792afd71c86bf179da2";
+            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${longitude}&appid=${api_key}`;
+
+            fetch(url)
+                  .then(response => response.json())
+                  .then(data => {
+                    console.log(data);
+                      const cityWeatherDiv = document.createElement('div');
+                      cityWeatherDiv.className = 'user-weather';
+                      cityWeatherDiv.innerHTML = `
+                       <div class ="live-weather-box">
+                          <p>Live weather update!!↙️</p>
+                          <h2>${data.name}</h2>
+                          <p>Weather &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  ${data.weather[0].description}</p>
+                          <p>Temperature &nbsp;: ${Math.round(data.main.temp -273.15)} °C</p>
+                          <p>Humidity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ${data.main.humidity}%</p>
+                          <p>Wind Speed&nbsp;&nbsp;&nbsp;: ${data.wind.speed} m/s</p>
+                        </div>
+                      `;
+                    x.appendChild(cityWeatherDiv);
+                  }) ;  
+        
+        }  
+        
+       console.log("hello");
+</script>
+
+ 
+{% endblock %}

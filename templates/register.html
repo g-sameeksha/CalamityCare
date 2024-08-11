@@ -1,0 +1,90 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+
+
+    <div class="register-container">
+        <h1 class="heading1">Register</h1>
+        <div class  = "separator"></div>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group4">
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control") }}
+                {% for error in form.username.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group5">
+                {{ form.full_name.label(class="form-label") }}
+                {{ form.full_name(class="form-control") }}
+                {% for error in form.full_name.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group6">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}
+                {% for error in form.email.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group7">
+                {{ form.phone.label(class="form-label") }}
+                {{ form.phone(class="form-control") }}
+                {% for error in form.phone.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group8">
+                {{ form.password.label(class="form-label") }}
+                <div>{{ form.password(class="form-control")}} <span class="toggle-password" onclick="togglePasswordVisibility()">
+                    👁️
+                </span></div>
+                
+               
+                {% for error in form.password.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+                
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="register-btn btn-primary") }}
+            </div>
+           
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="alert alert-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <div class="info-register">
+            <p>Already have account ? <a class ="register-link" href="{{ url_for('login')}} ">Login</a></p>
+           </div>
+        
+    </div>
+ 
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('password');
+            var eyeIcon = document.getElementById('eye-icon');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+
+
+
+{% endblock %}

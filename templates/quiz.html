@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalamityCare</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/quiz.css') }}"
+  />
+</head>
+<body>
+
+    <div class="container">
+        <h1>Major Natural Disasters</h1>
+        <div class="gallery">
+    
+       <figure class="card">
+        <img src="https://cdn.pixabay.com/photo/2024/01/10/02/49/ai-generated-8498744_1280.jpg" alt="">
+        <figcaption>Tsunami</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1695914233513-6f9ca230abdb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <figcaption>Earthquake</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/F5_tornado_Elie_Manitoba_2007.jpg/1200px-F5_tornado_Elie_Manitoba_2007.jpg" alt="">
+        <figcaption>Tornado</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://earth.org/wp-content/uploads/2021/08/Untitled-design-21-copy-1200x900.jpg" alt="">
+        <figcaption>Floods</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://s.w-x.co/util/image/v/hurricanefacts.jpg?v=at&w=650&h=356" alt="">
+        <figcaption>Hurricanes</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://imageio.forbes.com/specials-images/imageserve/60708b35c49cab8e47fb7e60/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="">
+        <figcaption>Volcano Eruption</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://media.licdn.com/dms/image/D4D12AQEMHhdfnoWnJA/article-cover_image-shrink_720_1280/0/1680375976698?e=2147483647&v=beta&t=v-KxaqI8c33TXF5UsZ_s6fxsSsR_1PjHb3PktyHKPUA" alt="">
+        <figcaption>Landslides</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://theethicalist.com/wp-content/uploads/2022/06/iStock-157313406.jpg" alt="">
+        <figcaption>Drought</figcaption>
+       </figure>
+    
+       <figure class="card">
+        <img src="https://t4.ftcdn.net/jpg/03/72/86/29/360_F_372862912_1BLyWRTQJlL5WM9ECOcV185Rf9kDXVgP.jpg" alt="">
+        <figcaption>Wildfires</figcaption>
+       </figure>
+    
+       
+    
+        </div>
+    </div>
+    <div class="wrapper"  >
+        <div class="Navbar">
+              <div><h1 title="NameofWebiste" id="name">CalamityCare</h1></div>
+              <div class="contents">
+                <a href="{{ url_for('home') }}" class="color"><img height="20px" src="https://img.icons8.com/?size=100&id=2797&format=png&color=FFFFFF" title="Home" ></a>
+                <a href="{{ url_for('weatherblog')}}" class="color"><img height="20px" src="https://img.icons8.com/?size=100&id=qWg3Sn87LjDZ&format=png&color=FFFFFF" title="Weather Blog"></a>
+                <a href="{{ url_for('learning')}}" class="color"><img height="20px" src="https://img.icons8.com/?size=100&id=25211&format=png&color=FFFFFF"  title="Learning"></a>
+                <a href="{{ url_for('service')}}" class="color"><img height="20px" src="https://img.icons8.com/?size=100&id=2908&format=png&color=FFFFFF"  title="Services"></a>
+                <a href="{{ url_for('About')}}" class="color"><img height="20px" src="https://img.icons8.com/?size=100&id=7694&format=png&color=FFFFFF"  title="About US"></a>
+              </div>
+        </div>
+
+
+    <div class ="quiz-section">
+        <div id="quiz-container">
+            <h1>Disaster Preparedness Quiz</h1>
+            <div id="question-container">
+                <p id="question-text"></p>
+                <div id="options-container"></div>
+            </div>
+            <button id="next-question-btn" onclick="generateRandomQuestion()">Next Question</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <section id="feedback" class="scroll-section">
+        <a href="{{ url_for('About')}}">About Us</a>
+        <h2>💬 Feedback and Suggestions</h2>
+        <p>We value your input. Please share your ideas on disaster management and additional services:</p>
+        <form id="feedback-form">
+            <label for="disaster-ideas">Ideas on Disaster Management:</label>
+            <textarea id="disaster-ideas" name="disaster-ideas" rows="4" placeholder="Share your ideas on controlling and managing disasters..."></textarea>
+            <label for="additional-services">Additional Services:</label>
+            <textarea id="additional-services" name="additional-services" rows="4" placeholder="Suggest additional services that could be included..."></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="feedback-counter">
+            <p>Total Feedback Submitted: <span id="feedback-count">0</span></p>
+        </div>
+    </section>
+      <footer>
+        <p>&copy; 2024 CalamityCare</p>
+    </footer>
+    <script > 
+        const questions = [
+    {
+        question: "What should you do during an earthquake?",
+        options: ["Run outside", "Take cover under a table", "Stand near a window"],
+        correctAnswer: 1
+    },
+    {
+        question: "How can you prepare for a flood?",
+        options: ["Move to higher ground", "Stay in the basement", "Open all windows"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the safest way to evacuate during a wildfire?",
+        options: ["Drive towards the fire", "Run on foot", "Follow the recommended evacuation route"],
+        correctAnswer: 2
+    },
+    {
+        question: "What should you include in an emergency kit?",
+        options: ["Canned food and water", "Video games", "Beachwear"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the first step in creating a disaster preparedness plan?",
+        options: ["Building an emergency kit", "Identifying risks", "Choosing a meeting place", "Learning first aid"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which organization provides guidelines for disaster preparedness and response in the U.S.?",
+        options: ["CDC", "WHO", "FEMA", "Red Cross"],
+        correctAnswer: 2
+    },
+    {
+        question: "How often should you review and update your emergency preparedness plan?",
+        options: ["Annually", "Every 5 years", "Every 2 years", "Every 10 years"],
+        correctAnswer: 0
+    },
+    {
+        question: "What should be included in a basic emergency kit?",
+        options: ["Food and water", "Flashlight and batteries", "First aid supplies", "All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the primary purpose of a fire extinguisher?",
+        options: ["To cool down fires", "To contain fires", "To put out small fires", "To warn about fires"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following is a common cause of house fires?",
+        options: ["Lightning", "Cooking accidents", "Flooding", "Earthquakes"],
+        correctAnswer: 1
+    },
+    {
+        question: "What should you do if a fire breaks out in your home?",
+        options: ["Try to extinguish it", "Evacuate immediately", "Call 911", "All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following is NOT recommended for fire prevention?",
+        options: ["Using space heaters", "Overloading electrical outlets", "Installing smoke alarms", "Regularly checking appliances"],
+        correctAnswer: 1
+    },
+    {
+        question: "What should you do if you are caught in a flash flood?",
+        options: ["Move to higher ground", "Stay where you are", "Try to swim to safety", "Wait for rescue"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the best way to stay informed during a disaster?",
+        options: ["Watching TV", "Listening to the radio", "Checking social media", "All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "How can you protect yourself from hurricanes?",
+        options: ["Evacuating the area", "Boarding up windows", "Staying indoors", "All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the most important item to have in a winter storm emergency kit?",
+        options: ["Snow shovel", "Blankets", "Non-perishable food", "Flashlight"],
+        correctAnswer: 2
+    }
+];
+
+let availableQuestions = [...questions]; // Clone the questions array to keep track of available questions
+
+function generateRandomQuestion() {
+    if (availableQuestions.length === 0) {
+        // Reset the available questions if all have been asked
+        availableQuestions = [...questions];
+    }
+
+    const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+    const selectedQuestion = availableQuestions[randomIndex];
+
+    // Remove the selected question from the available questions
+    availableQuestions.splice(randomIndex, 1);
+
+    const questionTextElement = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const resultElement = document.getElementById('result');
+
+    questionTextElement.innerText = selectedQuestion.question;
+    optionsContainer.innerHTML = "";
+
+    selectedQuestion.options.forEach((option, index) => {
+        const optionButton = document.createElement('button');
+        optionButton.classList.add('option-btn');
+        optionButton.innerText = option;
+        optionButton.onclick = () => checkAnswer(index, selectedQuestion.correctAnswer);
+        optionsContainer.appendChild(optionButton);
+    });
+
+    resultElement.innerText = ""; // Clear previous result
+}
+
+function checkAnswer(selectedIndex, correctIndex) {
+    const resultElement = document.getElementById('result');
+    if (selectedIndex === correctIndex) {
+        resultElement.innerText = "Correct!";
+    } else {
+        resultElement.innerText = "Incorrect. Try again!";
+    }
+}
+
+// Generate the first question on page load
+generateRandomQuestion();
+    </script>
+</body>
+</html>

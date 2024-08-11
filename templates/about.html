@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalamityCare</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/aboutus.css') }}"
+  />
+</head>
+<body>
+    <div class="wrapper"  >
+        <div class="Navbar">
+              <div><h1 title="NameofWebiste" id="name">CalamityCare</h1></div>
+              <div class="contents">
+                <a href="{{ url_for('home') }}" class="color"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=FFFFFF" title="Home" ></a>
+                <a href="{{ url_for('weatherblog')}}" class="color"><img src="https://img.icons8.com/?size=100&id=qWg3Sn87LjDZ&format=png&color=FFFFFF" title="Weather Blog"></a>
+                <a href="{{ url_for('learning')}}" class="color"><img src="https://img.icons8.com/?size=100&id=25211&format=png&color=FFFFFF"  title="Learning"></a>
+                <a href="{{ url_for('service')}}" class="color"><img src="https://img.icons8.com/?size=100&id=2908&format=png&color=FFFFFF"  title="Services"></a>
+                <a href="{{ url_for('About')}}" class="color"><img src="https://img.icons8.com/?size=100&id=7694&format=png&color=FFFFFF"  title="About US"></a>
+              </div>
+        </div>
+    <div class="wrapper">
+        <div class="container">
+            <div>
+                <h1>About Us</h1>
+            </div>
+            <div class="content">
+                <h2>Our platform offers a range of features designed to educate and assist:</h2>
+               <div class="weatherinfo">
+                <h2>Weather Information</h2>
+                <p>Receive up-to-date weather information based on your location, ensuring you're always aware of any potential threats.</p>
+               </div>
+
+               <div class="quiz">
+                <h2>Disaster Preparedness Quizzes</h2>
+                <p>Test your knowledge on essential disaster preparedness strategies through our interactive quizzes. Whether you're brushing up on the basics or learning something new, our quizzes are designed to educate and inform.</p>
+               </div>
+
+               <div class="blogs">
+                <h2>Blogs</h2>
+                <p>Stay informed with our regularly updated blog posts, which cover a wide range of topics related to disaster preparedness, recovery, and resilience.</p>
+               </div>
+
+               <div class="Help">
+                <h2>Help and Services</h2>
+                <p>Access vital information about government services and resources available to you during and after a natural disaster. We aim to connect you with the help you need, when you need it most.</p>
+               </div>
+
+               <div class="contribute">
+                <h2>Contribute for Good</h2>
+                <p>We believe in the power of community. Our "Contribute for Good" section allows you to donate to those affected by natural disasters. Your contributions go directly to those in need, providing critical support in times of crisis.</p>
+               </div>
+            </div>
+
+        </div>
+    </div>
+    <section id="feedback" class="scroll-section">
+        <a href="{{ url_for('About')}}">About Us</a>
+        <h2>💬 Feedback and Suggestions</h2>
+        <p>We value your input. Please share your ideas on disaster management and additional services:</p>
+        <form id="feedback-form">
+            <label for="disaster-ideas">Ideas on Disaster Management:</label>
+            <textarea id="disaster-ideas" name="disaster-ideas" rows="4" placeholder="Share your ideas on controlling and managing disasters..."></textarea>
+            <label for="additional-services">Additional Services:</label>
+            <textarea id="additional-services" name="additional-services" rows="4" placeholder="Suggest additional services that could be included..."></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="feedback-counter">
+            <p>Total Feedback Submitted: <span id="feedback-count">0</span></p>
+        </div>
+    </section>
+      <footer>
+        <p>&copy; 2024 CalamityCare</p>
+    </footer>
+</body>
+</html>

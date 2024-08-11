@@ -1,0 +1,249 @@
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #4a4a4a;
+    color: #ffffff;
+    padding: 1rem 0;
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    position: relative;
+    font-size: 1.8rem;
+    margin: 20px;
+    top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+main .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-list {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-list h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #4a4a4a;
+}
+
+.blog-list ul {
+    list-style-type: none;
+}
+
+.blog-list li {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+.blog-list li:last-child {
+    border-bottom: none;
+}
+
+.blog-list li a {
+    color: #555;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.blog-list li a:hover {
+    text-decoration: underline;
+}
+
+.tips {
+    margin: 2rem 0;
+}
+
+.tips ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+.contact {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+footer {
+    background: #4a4a4a;
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+form {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+form textarea {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    background-color: transparent;
+    color : white;
+}
+
+form button {
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #ff5722;
+}
+
+#feedback{
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+   /* display: flex ;
+   flex-direction: column;
+   justify-content: center;
+   align-items: right;
+   color: white; */
+}
+
+
+#feedback-counter {
+    margin: 20px;
+    font-size: 16px;
+}
+#feedback-form{
+    position:relative;
+    left : 20px;
+    width : 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#feedback-form button{
+    width: 200px;
+
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+   
+}
+
+
+button {
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h2{
+    position: relative;
+   
+    margin: 20px;
+    top: 20px;
+}

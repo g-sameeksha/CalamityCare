@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <!-- <div class="text">
+        Hello Welcome !!!!! In this Website you get-<span class="role"></span>
+    </div>
+     -->
+
+     <div class="hero-section">
+      
+        <div class="hero-section-left">
+            <div class="hero-section-heading">Hello WELCOME!!!!!!</div>
+            <div class="hero-section-heading hero-section-sub-heading">
+                Here You Get - <span class="role"></span>
+            </div>
+            <div class="hero-section-description">
+                Natural disasters include all types of severe weather, which have the potential to pose a significant threat to human health and safety, property, critical infrastructure, and homeland security.
+            </div>
+            <div class="ls">
+               
+                <button class="login"><a href="{{ url_for('login') }}">Log in</a></button>
+               <button class="login"><a href="{{ url_for('register') }}">Sign in</a></button>
+            
+               </div>
+        </div>
+        <div class="hero-section-right">
+          
+           <div class="user-image">
+            <img src="https://i.pinimg.com/736x/8b/4b/fd/8b4bfd1c2c48b6095cecd6f0c4974f2f.jpg" alt="" width="340px" height="300px"/>
+           </div>
+
+        </div>
+       
+      
+    </div>
+</div>
+
+   
+
+
+ 
+{% endblock %}
