@@ -18,11 +18,14 @@
     <div class="Navbar">
           <div><h1 title="NameofWebiste" id="name">CalamityCare</h1></div>
           <div class="contents">
+           <div class ="nav-menu">
             <a href="{{ url_for('home') }}" class="color"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=FFFFFF" title="Home" ></a>
             <a href="{{ url_for('weatherblog')}}" class="color"><img src="https://img.icons8.com/?size=100&id=qWg3Sn87LjDZ&format=png&color=FFFFFF" title="Weather Blog"></a>
             <a href="{{ url_for('learning')}}" class="color"><img src="https://img.icons8.com/?size=100&id=25211&format=png&color=FFFFFF"  title="Learning"></a>
             <a href="{{ url_for('service')}}" class="color"><img src="https://img.icons8.com/?size=100&id=2908&format=png&color=FFFFFF"  title="Services"></a>
             <a href="{{ url_for('About')}}" class="color"><img src="https://img.icons8.com/?size=100&id=7694&format=png&color=FFFFFF"  title="About US"></a>
+           </div>
+           <button>X</button>
           </div>
     </div>
     {% block content %}

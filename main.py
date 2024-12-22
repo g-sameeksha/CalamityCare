@@ -27,6 +27,11 @@ def index():
 @app.route("/home")
 @login_required
 def home():
+    result = db.session.execute(db.select(User).order_by(User.username))
+    user  = result.scalars().all()
+    for user in user:
+        print(user.username)
+        print(user.email)
     return render_template("home.html")
 
 

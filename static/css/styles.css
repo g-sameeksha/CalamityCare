@@ -31,7 +31,7 @@ a {
     color : white;
 }
 
-.contents {
+.contents .nav-menu {
     display: flex;
     font-size: 20px;
     align-items: center;
@@ -39,6 +39,9 @@ a {
     gap: 1.5rem;
 }
 
+.contents button:hover{
+    color:red
+}
 .color img{
     height: 30px;
 }
@@ -476,4 +479,14 @@ button {
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
+}
+
+
+@media(max-width : 782px) {
+    
+    .contents .nav-menu{
+        position: fixed;
+        left:0%;
+    }
+    
 }
